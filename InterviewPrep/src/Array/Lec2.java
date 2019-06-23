@@ -328,42 +328,4 @@ public class Lec2 {
 
 	}
 
-	// O(n) : Math Space O(1)
-	public int maximizeDistToClosest_EFF(int[] seats) {
-
-		int k = 0;
-		int N = seats.length;
-		int ans = 0;
-
-		for (int i = 0; i < seats.length; i++) {
-
-			if (seats[i] == 1) {
-				k = 0;
-			} else {
-				k++;
-			}
-
-			ans = Math.max(ans, k);
-		}
-
-		for (int i = 0; i < seats.length; i++) {
-
-			if (seats[i] == 1) {
-				ans = Math.max(i, ans);
-				break;
-			}
-		}
-
-		for (int i = seats.length - 1; i >= 0; i--) {
-
-			if (seats[i] == 1) {
-
-				ans = Math.max(ans, N - i - 1);
-				break;
-			}
-		}
-
-		return ans;
-	}
-
 }
